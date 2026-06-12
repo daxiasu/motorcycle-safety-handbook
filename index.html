@@ -24,6 +24,7 @@
           <span>Rider Notes</span>
         </a>
         <div class="navlinks">
+          <a href="#rider-map">人车地图</a>
           <a href="#principles">核心原则</a>
           <a href="#lessons">课程档案</a>
           <a href="#update">继续追加</a>
@@ -64,6 +65,142 @@
             <h3>视线决定方向</h3>
             <p>视线锁定目标出口，车辆自然跟随你的意图进入路线。</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section section--rider-map" id="rider-map" aria-labelledby="rider-map-title">
+        <div class="section__heading section__heading--split">
+          <div>
+            <p class="eyebrow">Rider Focus Map</p>
+            <h2 id="rider-map-title">把注意点放回车和车手身上</h2>
+          </div>
+          <p class="section-note">鼠标移到光点上查看动作提醒；手机端可以轻点光点，或直接看下方要点卡片。</p>
+        </div>
+
+        <div class="rider-map">
+          <figure class="rider-map__stage" aria-label="车手与摩托车互动要点图">
+            <svg class="rider-figure" viewBox="0 0 1000 560" role="img" aria-labelledby="rider-figure-title rider-figure-desc">
+              <title id="rider-figure-title">车手与摩托车互动要点示意图</title>
+              <desc id="rider-figure-desc">一名车手骑在摩托车上，图中用光点标注头盔、视线、手部、核心、双腿和刹车要点。</desc>
+              <defs>
+                <linearGradient id="mapBikeBody" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#243342"/>
+                  <stop offset="0.55" stop-color="#101821"/>
+                  <stop offset="1" stop-color="#070a0e"/>
+                </linearGradient>
+                <linearGradient id="mapAccent" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ff6b2d"/>
+                  <stop offset="0.52" stop-color="#ffc247"/>
+                  <stop offset="1" stop-color="#20d6ff"/>
+                </linearGradient>
+                <radialGradient id="mapGlow" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#f8fbff" stop-opacity="0.9"/>
+                  <stop offset="0.38" stop-color="#20d6ff" stop-opacity="0.34"/>
+                  <stop offset="1" stop-color="#20d6ff" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="mapSoftGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="7" result="blur"/>
+                  <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.1  0 1 0 0 0.6  0 0 1 0 1  0 0 0 0.9 0"/>
+                  <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <rect width="1000" height="560" rx="28" fill="#0a0f15"/>
+              <path d="M88 418 C244 330 374 306 518 332 C674 360 770 438 924 417" fill="none" stroke="url(#mapAccent)" stroke-width="4" stroke-linecap="round" opacity="0.62" filter="url(#mapSoftGlow)"/>
+              <path d="M110 452 C286 374 405 365 545 389 C684 413 784 463 912 455" fill="none" stroke="#d8eefb" stroke-opacity="0.26" stroke-width="2" stroke-dasharray="18 22"/>
+
+              <g class="bike" transform="translate(95 122)">
+                <ellipse cx="416" cy="348" rx="354" ry="31" fill="#000" opacity="0.33"/>
+                <circle cx="225" cy="320" r="91" fill="#05070b" stroke="#101923" stroke-width="18"/>
+                <circle cx="225" cy="320" r="54" fill="none" stroke="#d8eefb" stroke-width="5" stroke-opacity="0.22"/>
+                <circle cx="671" cy="320" r="91" fill="#05070b" stroke="#101923" stroke-width="18"/>
+                <circle cx="671" cy="320" r="54" fill="none" stroke="#d8eefb" stroke-width="5" stroke-opacity="0.22"/>
+                <path d="M210 305 C284 185 375 154 484 171 C568 184 635 226 710 297 L657 329 C596 260 522 228 430 231 C337 234 281 264 237 334 Z" fill="url(#mapBikeBody)"/>
+                <path d="M344 194 L438 88 L548 124 L522 178 L418 166 L371 236 Z" fill="#223140"/>
+                <path d="M477 113 L640 105 L735 174 L710 224 L608 178 L508 181 Z" fill="#0f1720"/>
+                <path d="M233 298 L397 236 L672 303" fill="none" stroke="#71808d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M352 229 L449 313 L566 149" fill="none" stroke="#101720" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M553 140 C603 120 660 124 710 154" fill="none" stroke="#d8eefb" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+                <path d="M707 154 C744 158 782 169 820 188" fill="none" stroke="#d8eefb" stroke-width="7" stroke-linecap="round" opacity="0.65"/>
+                <path d="M634 159 C707 169 760 195 810 244" fill="none" stroke="#ff6b2d" stroke-width="5" stroke-linecap="round" opacity="0.72" filter="url(#mapSoftGlow)"/>
+                <path d="M733 217 C797 215 854 228 909 252" fill="none" stroke="#20d6ff" stroke-width="5" stroke-linecap="round" opacity="0.66" filter="url(#mapSoftGlow)"/>
+              </g>
+
+              <g class="rider" transform="translate(356 60) rotate(-5 200 230)">
+                <path d="M226 103 C220 60 236 27 266 12 C301 -5 347 8 368 43 C389 78 382 121 350 148 C314 178 261 170 237 132 C231 123 228 114 226 103 Z" fill="#080b10"/>
+                <path d="M271 34 C299 20 331 27 350 51 C363 68 367 86 363 106 C326 94 295 85 261 79 C260 61 263 47 271 34 Z" fill="#263746"/>
+                <path d="M244 145 C287 181 334 203 402 218 L382 276 C302 264 245 233 205 180 Z" fill="#111a24"/>
+                <path d="M208 182 C168 229 136 281 95 366" fill="none" stroke="#111a24" stroke-width="29" stroke-linecap="round"/>
+                <path d="M390 220 C436 264 476 318 523 388" fill="none" stroke="#111a24" stroke-width="29" stroke-linecap="round"/>
+                <path d="M208 185 C269 205 336 215 407 217" fill="none" stroke="#2b3b49" stroke-width="12" stroke-linecap="round"/>
+                <path d="M353 139 C398 143 438 158 478 184" fill="none" stroke="#111a24" stroke-width="22" stroke-linecap="round"/>
+                <path d="M198 181 C243 197 296 207 354 211" fill="none" stroke="#ff6b2d" stroke-width="5" stroke-linecap="round" opacity="0.62"/>
+                <path d="M465 183 C503 193 537 203 570 215" fill="none" stroke="#111a24" stroke-width="15" stroke-linecap="round"/>
+              </g>
+
+              <circle cx="682" cy="95" r="66" fill="url(#mapGlow)" opacity="0.45"/>
+              <path d="M684 96 C736 96 780 111 817 143" fill="none" stroke="#20d6ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 12" opacity="0.7"/>
+            </svg>
+
+            <button class="hotspot hotspot--helmet" type="button" aria-label="头盔安全扣">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>头盔安全扣</strong><span>戴上不算结束，安全扣扣好才算完成。</span></span>
+            </button>
+            <button class="hotspot hotspot--vision" type="button" aria-label="视线锁定">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>视线锁定</strong><span>不要盯车头，视线决定你要去的方向。</span></span>
+            </button>
+            <button class="hotspot hotspot--left-hand" type="button" aria-label="左手放松">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>左手放松</strong><span>左转时手别紧张推车，把重心交给车。</span></span>
+            </button>
+            <button class="hotspot hotspot--throttle" type="button" aria-label="右手油门稳定">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>右手油门稳定</strong><span>过弯时别突兀给油或收油，节奏要连续。</span></span>
+            </button>
+            <button class="hotspot hotspot--core" type="button" aria-label="核心收紧">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>核心收紧</strong><span>加速弯腰收核心，收油直腰抵消惯性。</span></span>
+            </button>
+            <button class="hotspot hotspot--legs" type="button" aria-label="双腿夹紧">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>双腿夹紧</strong><span>腿夹紧不要松，先稳定身体再稳定车辆。</span></span>
+            </button>
+            <button class="hotspot hotspot--front-brake" type="button" aria-label="前刹车姿态">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>前刹车姿态</strong><span>车辆与地面垂直，车把与车辆垂直时使用。</span></span>
+            </button>
+            <button class="hotspot hotspot--rear-brake" type="button" aria-label="后刹车与出弯补油">
+              <span class="hotspot__dot"></span>
+              <span class="hotspot__tooltip"><strong>后刹与补油</strong><span>过弯轻踩后刹，出弯松刹车补油。</span></span>
+            </button>
+          </figure>
+
+          <div class="rider-map__legend" aria-label="互动图要点列表">
+            <article>
+              <span>01</span>
+              <h3>装备先闭环</h3>
+              <p>头盔安全扣、上车捏离合，是动作开始前的安全底线。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>身体先稳定</h3>
+              <p>核心收紧、双腿夹车，车身的重心变化才会变得清楚。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>手部少干扰</h3>
+              <p>左手放松，右手油门稳定，让路线由视线和重心带出来。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>刹车讲姿态</h3>
+              <p>前刹看车身和车把姿态，过弯用后刹辅助稳定，出弯再补油。</p>
+            </article>
+          </div>
         </div>
       </section>
 
