@@ -216,6 +216,127 @@ h1 {
   padding: 68px 0;
 }
 
+.section--laoluo {
+  padding-top: 28px;
+}
+
+.coach-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.58fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.coach-profile__copy,
+.coach-poster {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(21, 30, 40, 0.92), rgba(11, 16, 23, 0.92)),
+    radial-gradient(circle at 0 0, rgba(255, 107, 45, 0.14), transparent 22rem);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.coach-profile__copy {
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 56px);
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-profile__copy::after {
+  content: "";
+  position: absolute;
+  inset: auto -70px -96px auto;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(32, 214, 255, 0.18);
+  transform: rotate(19deg);
+  border-radius: 8px;
+}
+
+.coach-profile h2 {
+  margin-bottom: 18px;
+  font-size: clamp(36px, 6vw, 76px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.coach-profile__copy > p:not(.eyebrow) {
+  max-width: 620px;
+  margin-bottom: 22px;
+  color: #dce5ed;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.coach-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.coach-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(8, 13, 19, 0.72);
+  color: #d7e5ee;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 999px;
+}
+
+.coach-highlights {
+  display: grid;
+  gap: 12px;
+}
+
+.coach-highlights article {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  border-radius: 8px;
+}
+
+.coach-highlights strong,
+.coach-highlights span {
+  display: block;
+}
+
+.coach-highlights strong {
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.coach-highlights span {
+  color: var(--muted);
+}
+
+.coach-poster {
+  margin: 0;
+  padding: 12px;
+  background:
+    linear-gradient(180deg, rgba(36, 53, 42, 0.72), rgba(8, 12, 18, 0.92)),
+    radial-gradient(circle at 50% 0, rgba(126, 227, 154, 0.14), transparent 18rem);
+}
+
+.coach-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 760px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #f7f2e8;
+}
+
 .section__heading {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -890,6 +1011,7 @@ li + li {
   }
 
   .overview-grid,
+  .coach-profile,
   .principle-layout,
   .rider-map__legend,
   .practice-list,
@@ -900,6 +1022,10 @@ li + li {
 
   .practice {
     min-height: 210px;
+  }
+
+  .coach-profile__copy {
+    min-height: auto;
   }
 
   .rule-group {
@@ -959,6 +1085,31 @@ li + li {
 
   .section {
     padding-block: 48px;
+  }
+
+  .section--laoluo {
+    padding-top: 18px;
+  }
+
+  .coach-profile {
+    gap: 14px;
+  }
+
+  .coach-profile__copy {
+    padding: 24px;
+  }
+
+  .coach-profile__copy::after {
+    width: 160px;
+    height: 160px;
+  }
+
+  .coach-poster {
+    padding: 8px;
+  }
+
+  .coach-poster img {
+    max-height: none;
   }
 
   .section--intro {
