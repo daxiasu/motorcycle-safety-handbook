@@ -1265,6 +1265,7 @@ body:not([data-active-page="rules"]) .hero-system {
   .hero-copy,
   .rule-visual,
   .focus-section,
+  .rule-stack,
   .lesson-feature,
   .lesson-record,
   .coach-profile {
@@ -1278,6 +1279,13 @@ body:not([data-active-page="rules"]) .hero-system {
 
   .rule-visual__media {
     min-height: 520px;
+  }
+
+  .discipline-media {
+    grid-column: 1;
+    width: 100%;
+    min-height: 320px;
+    margin-bottom: 18px;
   }
 
   .lesson-title {
@@ -1418,17 +1426,83 @@ body:not([data-active-page="rules"]) .hero-system {
     padding: 28px;
   }
 
-  .hotspot strong {
-    display: none;
-  }
-
   .hotspot {
-    width: 72px;
-    height: 54px;
+    width: 88px;
+    height: 58px;
   }
 
   .hotspot::before {
     display: none;
+  }
+
+  .hotspot span {
+    width: 9px;
+    height: 9px;
+    box-shadow: 0 0 0 7px rgba(199, 160, 90, 0.12), 0 0 22px rgba(199, 160, 90, 0.62);
+  }
+
+  .hotspot strong,
+  .hotspot--vision strong,
+  .hotspot--left strong,
+  .hotspot--legs strong {
+    left: 50%;
+    right: auto;
+    top: calc(100% - 4px);
+    max-width: 86px;
+    display: block;
+    padding: 4px 6px;
+    font-size: 10px;
+    line-height: 1.12;
+    white-space: normal;
+    text-align: center;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  .hotspot:hover strong,
+  .hotspot:focus-visible strong,
+  .hotspot--vision:hover strong,
+  .hotspot--vision:focus-visible strong,
+  .hotspot--left:hover strong,
+  .hotspot--left:focus-visible strong,
+  .hotspot--legs:hover strong,
+  .hotspot--legs:focus-visible strong {
+    transform: translateX(-50%);
+  }
+
+  .hotspot--helmet strong,
+  .hotspot--throttle strong,
+  .hotspot--core strong {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .hotspot--vision strong,
+  .hotspot--left strong,
+  .hotspot--legs strong {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+
+  .hotspot--helmet:hover strong,
+  .hotspot--helmet:focus-visible strong,
+  .hotspot--throttle:hover strong,
+  .hotspot--throttle:focus-visible strong,
+  .hotspot--core:hover strong,
+  .hotspot--core:focus-visible strong,
+  .hotspot--vision:hover strong,
+  .hotspot--vision:focus-visible strong,
+  .hotspot--left:hover strong,
+  .hotspot--left:focus-visible strong,
+  .hotspot--legs:hover strong,
+  .hotspot--legs:focus-visible strong {
+    transform: translateX(0);
+  }
+
+  .discipline-media,
+  .discipline-media img {
+    min-height: 260px;
   }
 
   .rule-row,
