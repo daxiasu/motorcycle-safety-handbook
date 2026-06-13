@@ -3,484 +3,333 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>老罗的安驾课程</title>
-    <meta name="description" content="老罗的摩托车安全驾驶课程站：核心原则、课程档案与教练风采。">
+    <title>老罗 RoadCraft：路上功夫</title>
+    <meta name="description" content="老罗 RoadCraft：路上功夫。摩托车安全驾驶、控车基础与弯道路线训练。">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <header class="hero" id="top">
-      <div class="hero__backdrop" aria-hidden="true"></div>
+  <body data-active-page="rules">
+    <script>
+      document.body.dataset.activePage = ["rules", "lessons", "coach"].includes(location.hash.replace("#", ""))
+        ? location.hash.replace("#", "")
+        : "rules";
+    </script>
+    <header class="site-hero" id="top">
       <nav class="topbar" aria-label="页面导航">
-        <a class="brand" href="#rules" aria-label="老罗的安驾课程首页">
+        <a class="brand" href="#rules" aria-label="老罗 RoadCraft：路上功夫 首页">
           <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M3 15c4-4 9-5 14-3 2 .7 3.4 1.6 4.5 3" />
-              <circle cx="7" cy="17" r="3" />
-              <circle cx="18" cy="17" r="3" />
-              <path d="M8 14l4-6 5 3 2-4" />
-            </svg>
+            <img src="assets/brand/roadcraft-mark.jpg" alt="">
           </span>
-          <span>老罗安驾</span>
+          <span class="brand__name">
+            <strong>老罗 RoadCraft</strong>
+            <small>路上功夫</small>
+          </span>
         </a>
         <div class="navlinks" role="tablist" aria-label="一级菜单">
-          <a href="#rules" data-page-link="rules" role="tab" aria-controls="rules" aria-selected="true">核心原则</a>
-          <a href="#lessons" data-page-link="lessons" role="tab" aria-controls="lessons" aria-selected="false">课程档案</a>
-          <a href="#coach" data-page-link="coach" role="tab" aria-controls="coach" aria-selected="false">老罗风采</a>
+          <a href="#rules" data-page-link="rules" role="tab" aria-controls="rules" aria-selected="true">骑行法则</a>
+          <a href="#lessons" data-page-link="lessons" role="tab" aria-controls="lessons" aria-selected="false">训练轨迹</a>
+          <a href="#coach" data-page-link="coach" role="tab" aria-controls="coach" aria-selected="false">老罗 RoadCraft</a>
         </div>
       </nav>
 
-      <section class="hero__content" aria-labelledby="page-title">
-        <p class="kicker">Safety Riding Course</p>
-        <h1 id="page-title">老罗的安驾课程</h1>
-        <p class="hero__summary">把真实训练过程沉淀成安全驾驶知识库，帮助更多摩友建立安全意识，学到能上车实践的真东西。</p>
-        <div class="hero__meta" aria-label="训练状态">
-          <span>核心原则持续提炼</span>
-          <span>已记录 1 节课</span>
-          <span>照片视频逐步补充</span>
+      <section class="hero-copy" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow hero-brandline">老罗 RoadCraft</p>
+          <h1 id="page-title">路上功夫</h1>
         </div>
+        <figure class="hero-moto" aria-label="行驶中的摩托车线条视觉">
+          <img src="assets/brand/roadcraft-light-bike.jpg" alt="金色光线勾勒的摩托车与骑手">
+          <span class="moto-spot" aria-hidden="true"></span>
+        </figure>
       </section>
+
+      <div class="hero-system" aria-label="骑行法则结构">
+        <span>01 Controlled Force / 被控制的力量</span>
+        <span>02 Rider Geometry / 人车几何</span>
+        <span>03 Control Discipline / 动作纪律</span>
+      </div>
     </header>
 
-    <main class="page-shell">
+    <main class="site-main">
       <section class="page-view is-active" id="rules" data-page="rules" aria-labelledby="rules-title">
-        <div class="section page-heading">
-          <p class="eyebrow">Core Principles</p>
-          <h2 id="rules-title">核心原则</h2>
-          <p>这里不是单节课流水账，而是从每节课里向上提炼出来的长期规则。后续 Lesson 2、Lesson 3 的重点，也会继续沉淀到这里。</p>
-        </div>
+        <section class="section manifesto">
+          <p class="eyebrow">RoadCraft Code</p>
+          <h2 id="rules-title">骑行法则</h2>
+        </section>
 
-        <section class="section section--rider-map" aria-labelledby="rider-map-title">
-          <div class="section__heading section__heading--split">
-            <div>
-              <p class="eyebrow">Focus Map</p>
-              <h2 id="rider-map-title">把注意点放回车和车手身上</h2>
-            </div>
-            <p class="section-note">鼠标移到光点上查看动作提醒；手机端可以轻点光点，或直接看下方要点卡片。</p>
-          </div>
-
-          <div class="rider-map">
-            <figure class="rider-map__stage" aria-label="车手与摩托车互动要点图">
-              <svg class="rider-figure" viewBox="0 0 1000 560" role="img" aria-labelledby="rider-figure-title rider-figure-desc">
-                <title id="rider-figure-title">车手与摩托车互动要点示意图</title>
-                <desc id="rider-figure-desc">一名车手骑在摩托车上，图中用光点标注头盔、视线、手部、核心、双腿和刹车要点。</desc>
-                <defs>
-                  <linearGradient id="mapBikeBody" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stop-color="#243342"/>
-                    <stop offset="0.55" stop-color="#101821"/>
-                    <stop offset="1" stop-color="#070a0e"/>
-                  </linearGradient>
-                  <linearGradient id="mapAccent" x1="0" x2="1">
-                    <stop offset="0" stop-color="#ff6b2d"/>
-                    <stop offset="0.52" stop-color="#ffc247"/>
-                    <stop offset="1" stop-color="#20d6ff"/>
-                  </linearGradient>
-                  <radialGradient id="mapGlow" cx="0.5" cy="0.5" r="0.5">
-                    <stop offset="0" stop-color="#f8fbff" stop-opacity="0.9"/>
-                    <stop offset="0.38" stop-color="#20d6ff" stop-opacity="0.34"/>
-                    <stop offset="1" stop-color="#20d6ff" stop-opacity="0"/>
-                  </radialGradient>
-                  <filter id="mapSoftGlow" x="-40%" y="-40%" width="180%" height="180%">
-                    <feGaussianBlur stdDeviation="7" result="blur"/>
-                    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.1  0 1 0 0 0.6  0 0 1 0 1  0 0 0 0.9 0"/>
-                    <feMerge>
-                      <feMergeNode/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                <rect width="1000" height="560" rx="28" fill="#0a0f15"/>
-                <path d="M88 418 C244 330 374 306 518 332 C674 360 770 438 924 417" fill="none" stroke="url(#mapAccent)" stroke-width="4" stroke-linecap="round" opacity="0.62" filter="url(#mapSoftGlow)"/>
-                <path d="M110 452 C286 374 405 365 545 389 C684 413 784 463 912 455" fill="none" stroke="#d8eefb" stroke-opacity="0.26" stroke-width="2" stroke-dasharray="18 22"/>
-
-                <g class="bike" transform="translate(95 122)">
-                  <ellipse cx="416" cy="348" rx="354" ry="31" fill="#000" opacity="0.33"/>
-                  <circle cx="225" cy="320" r="91" fill="#05070b" stroke="#101923" stroke-width="18"/>
-                  <circle cx="225" cy="320" r="54" fill="none" stroke="#d8eefb" stroke-width="5" stroke-opacity="0.22"/>
-                  <circle cx="671" cy="320" r="91" fill="#05070b" stroke="#101923" stroke-width="18"/>
-                  <circle cx="671" cy="320" r="54" fill="none" stroke="#d8eefb" stroke-width="5" stroke-opacity="0.22"/>
-                  <path d="M210 305 C284 185 375 154 484 171 C568 184 635 226 710 297 L657 329 C596 260 522 228 430 231 C337 234 281 264 237 334 Z" fill="url(#mapBikeBody)"/>
-                  <path d="M344 194 L438 88 L548 124 L522 178 L418 166 L371 236 Z" fill="#223140"/>
-                  <path d="M477 113 L640 105 L735 174 L710 224 L608 178 L508 181 Z" fill="#0f1720"/>
-                  <path d="M233 298 L397 236 L672 303" fill="none" stroke="#71808d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M352 229 L449 313 L566 149" fill="none" stroke="#101720" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M553 140 C603 120 660 124 710 154" fill="none" stroke="#d8eefb" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
-                  <path d="M707 154 C744 158 782 169 820 188" fill="none" stroke="#d8eefb" stroke-width="7" stroke-linecap="round" opacity="0.65"/>
-                  <path d="M634 159 C707 169 760 195 810 244" fill="none" stroke="#ff6b2d" stroke-width="5" stroke-linecap="round" opacity="0.72" filter="url(#mapSoftGlow)"/>
-                  <path d="M733 217 C797 215 854 228 909 252" fill="none" stroke="#20d6ff" stroke-width="5" stroke-linecap="round" opacity="0.66" filter="url(#mapSoftGlow)"/>
-                </g>
-
-                <g class="rider" transform="translate(356 60) rotate(-5 200 230)">
-                  <path d="M226 103 C220 60 236 27 266 12 C301 -5 347 8 368 43 C389 78 382 121 350 148 C314 178 261 170 237 132 C231 123 228 114 226 103 Z" fill="#080b10"/>
-                  <path d="M271 34 C299 20 331 27 350 51 C363 68 367 86 363 106 C326 94 295 85 261 79 C260 61 263 47 271 34 Z" fill="#263746"/>
-                  <path d="M244 145 C287 181 334 203 402 218 L382 276 C302 264 245 233 205 180 Z" fill="#111a24"/>
-                  <path d="M208 182 C168 229 136 281 95 366" fill="none" stroke="#111a24" stroke-width="29" stroke-linecap="round"/>
-                  <path d="M390 220 C436 264 476 318 523 388" fill="none" stroke="#111a24" stroke-width="29" stroke-linecap="round"/>
-                  <path d="M208 185 C269 205 336 215 407 217" fill="none" stroke="#2b3b49" stroke-width="12" stroke-linecap="round"/>
-                  <path d="M353 139 C398 143 438 158 478 184" fill="none" stroke="#111a24" stroke-width="22" stroke-linecap="round"/>
-                  <path d="M198 181 C243 197 296 207 354 211" fill="none" stroke="#ff6b2d" stroke-width="5" stroke-linecap="round" opacity="0.62"/>
-                  <path d="M465 183 C503 193 537 203 570 215" fill="none" stroke="#111a24" stroke-width="15" stroke-linecap="round"/>
-                </g>
-
-                <circle cx="682" cy="95" r="66" fill="url(#mapGlow)" opacity="0.45"/>
-                <path d="M684 96 C736 96 780 111 817 143" fill="none" stroke="#20d6ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 12" opacity="0.7"/>
-              </svg>
-
-              <button class="hotspot hotspot--helmet" type="button" aria-label="头盔安全扣">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>头盔安全扣</strong><span>戴上不算结束，安全扣扣好才算完成。</span></span>
-              </button>
-              <button class="hotspot hotspot--vision" type="button" aria-label="视线锁定">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>视线锁定</strong><span>不要盯车头，视线决定你要去的方向。</span></span>
-              </button>
-              <button class="hotspot hotspot--left-hand" type="button" aria-label="左手放松">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>左手放松</strong><span>左转时手别紧张推车，把重心交给车。</span></span>
-              </button>
-              <button class="hotspot hotspot--throttle" type="button" aria-label="右手油门稳定">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>右手油门稳定</strong><span>过弯时别突兀给油或收油，节奏要连续。</span></span>
-              </button>
-              <button class="hotspot hotspot--core" type="button" aria-label="核心收紧">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>核心收紧</strong><span>加速弯腰收核心，收油直腰抵消惯性。</span></span>
-              </button>
-              <button class="hotspot hotspot--legs" type="button" aria-label="双腿夹紧">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>双腿夹紧</strong><span>腿夹紧不要松，先稳定身体再稳定车辆。</span></span>
-              </button>
-              <button class="hotspot hotspot--front-brake" type="button" aria-label="前刹车姿态">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>前刹车姿态</strong><span>车辆与地面垂直，车把与车辆垂直时使用。</span></span>
-              </button>
-              <button class="hotspot hotspot--rear-brake" type="button" aria-label="后刹车与出弯补油">
-                <span class="hotspot__dot"></span>
-                <span class="hotspot__tooltip"><strong>后刹与补油</strong><span>过弯轻踩后刹，出弯松刹车补油。</span></span>
-              </button>
-            </figure>
-
-            <div class="rider-map__legend" aria-label="互动图要点列表">
+        <section class="section rule-visual law-module" aria-labelledby="force-title">
+          <div class="rule-visual__copy">
+            <p class="eyebrow">Controlled Force</p>
+            <h2 id="force-title">被控制的力量</h2>
+            <p class="force-axiom">以判断约束速度，以秩序释放力量。</p>
+            <div class="force-code" aria-label="被控制的力量核心认知">
               <article>
                 <span>01</span>
-                <h3>装备先闭环</h3>
-                <p>头盔安全扣、上车捏离合，是动作开始前的安全底线。</p>
+                <strong>先建立认知</strong>
+                <p>“很多人骑了很多年车，但他并不知道什么叫会骑摩托车”</p>
               </article>
               <article>
                 <span>02</span>
-                <h3>身体先稳定</h3>
-                <p>核心收紧、双腿夹车，车身的重心变化才会变得清楚。</p>
+                <strong>用训练打底</strong>
+                <p>重心、姿态和路线选择，把基础动作练到稳定习惯。</p>
               </article>
               <article>
                 <span>03</span>
-                <h3>手部少干扰</h3>
-                <p>左手放松，右手油门稳定，让路线由视线和重心带出来。</p>
-              </article>
-              <article>
-                <span>04</span>
-                <h3>刹车讲姿态</h3>
-                <p>前刹看车身和车把姿态，过弯用后刹辅助稳定，出弯再补油。</p>
+                <strong>让反馈闭环</strong>
+                <p>发现错误，思考问题，改正纠偏。</p>
               </article>
             </div>
+          </div>
+          <div class="rule-visual__media" aria-hidden="true">
+            <img class="rule-visual__main" src="assets/photo/cornering-road.jpg" alt="">
+            <img class="rule-visual__cockpit" src="assets/photo/cockpit-detail.jpg" alt="">
+            <img class="rule-visual__bike" src="assets/photo/classic-black.jpg" alt="">
           </div>
         </section>
 
-        <section class="section section--rule-groups" aria-labelledby="principles-title">
-          <div class="section__heading">
-            <p class="eyebrow">Extracted Notes</p>
-            <h2 id="principles-title">从课程里抽取出来的规则细节</h2>
+        <section class="section focus-section law-module" aria-labelledby="focus-title">
+          <div class="focus-copy">
+            <p class="eyebrow">Rider Geometry</p>
+            <h2 id="focus-title">人车几何</h2>
+            <p>视线、核心、双腿和手部，构成车辆转向前的身体坐标。</p>
           </div>
 
-          <div class="rule-groups">
-            <section class="rule-group" aria-labelledby="safety-rules-title">
-              <div class="rule-group__heading">
-                <span>01</span>
-                <h3 id="safety-rules-title">安全意识和细节</h3>
-                <p>所有练习开始之前先保证人、车、防护和心态都在安全状态。</p>
-              </div>
-              <div class="principle-layout principle-layout--compact">
-                <article class="principle-card principle-card--hot">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M7 17V9a5 5 0 0 1 10 0v8"/><path d="M4 17h16"/><path d="M9 21h6"/></svg>
-                    </span>
-                    <span class="tag">上车前</span>
-                  </div>
-                  <h3>捏离合上车，防止冲车</h3>
-                  <p>养成上车先控制动力传递的习惯，尤其在坡起、低速控车、刚启动时保持警觉。</p>
-                </article>
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0v4H4z"/><path d="M8 16v3h8v-3"/><path d="M7 12h10"/></svg>
-                    </span>
-                    <span class="tag">防护</span>
-                  </div>
-                  <h3>头盔一定扣安全扣</h3>
-                  <p>不是戴上就结束，安全扣扣好才算完成头盔佩戴动作。</p>
-                </article>
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M15 6l6 6-6 6"/><path d="M5 19l14-14"/></svg>
-                    </span>
-                    <span class="tag">心态</span>
-                  </div>
-                  <h3>不骑“最后一圈”</h3>
-                  <p>训练结束前不要因为“再来最后一次”而放松标准，疲劳和兴奋都会让动作变形。</p>
-                </article>
-              </div>
-            </section>
+          <figure class="rider-stage" aria-label="车手与摩托车互动要点图">
+            <img src="assets/photo/rider-front.jpg" alt="真实摩托车骑士正面照片，用于标注安全驾驶注意点">
+            <button class="hotspot hotspot--helmet" type="button" aria-label="头盔安全扣">
+              <span></span>
+              <strong>扣具闭合</strong>
+            </button>
+            <button class="hotspot hotspot--vision" type="button" aria-label="视线锁定">
+              <span></span>
+              <strong>看向出口</strong>
+            </button>
+            <button class="hotspot hotspot--left" type="button" aria-label="左手放松">
+              <span></span>
+              <strong>左手放松</strong>
+            </button>
+            <button class="hotspot hotspot--throttle" type="button" aria-label="右手油门稳定">
+              <span></span>
+              <strong>油门连续</strong>
+            </button>
+            <button class="hotspot hotspot--core" type="button" aria-label="核心收紧">
+              <span></span>
+              <strong>核心收紧</strong>
+            </button>
+            <button class="hotspot hotspot--legs" type="button" aria-label="双腿夹紧">
+              <span></span>
+              <strong>双腿夹车</strong>
+            </button>
+          </figure>
+        </section>
 
-            <section class="rule-group" aria-labelledby="control-rules-title">
-              <div class="rule-group__heading">
-                <span>02</span>
-                <h3 id="control-rules-title">控车细节</h3>
-                <p>身体、手部和刹车姿态共同决定车辆是否稳定、动作是否干净。</p>
-              </div>
-              <div class="principle-layout principle-layout--compact">
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M4 12h16"/><circle cx="12" cy="12" r="4"/></svg>
-                    </span>
-                    <span class="tag">重心</span>
-                  </div>
-                  <h3>收紧核心，夹紧双腿</h3>
-                  <p>感受车辆重心，感受核心发力。先稳定身体，再让车辆稳定。</p>
-                </article>
-                <article class="principle-card principle-card--blue">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M8 19V5h8v14"/><path d="M4 9h16"/><path d="M16 9l4-3"/></svg>
-                    </span>
-                    <span class="tag">前刹</span>
-                  </div>
-                  <h3>前刹车要在车身正直时清晰使用</h3>
-                  <p>使用前刹时，车辆与地面垂直，车把与车辆垂直，避免在姿态不稳定时硬拉前刹。</p>
-                </article>
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M6 12h12"/><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/></svg>
-                    </span>
-                    <span class="tag">手部</span>
-                  </div>
-                  <h3>左手放松，右手油门稳定</h3>
-                  <p>左手紧张会把车推回去，右手不稳会破坏过弯节奏。</p>
-                </article>
-              </div>
-            </section>
+        <section class="section rule-stack law-module" aria-labelledby="iron-title">
+          <div class="section-kicker">
+            <p class="eyebrow">Control Discipline</p>
+            <h2 id="iron-title">动作纪律</h2>
+            <p>纪律不是口号，是每次上车前、进弯前、出弯前都能重复执行的动作顺序。</p>
+          </div>
+          <figure class="discipline-media" aria-hidden="true">
+            <img src="assets/photo/tunnel-motion.jpg" alt="">
+          </figure>
 
-            <section class="rule-group" aria-labelledby="route-rules-title">
-              <div class="rule-group__heading">
-                <span>03</span>
-                <h3 id="route-rules-title">路线和视线</h3>
-                <p>真正的转弯不是盯车头和拧车把，而是用视线、路线、重心和后刹组合出来。</p>
+          <div class="rule-rows">
+            <article class="rule-row">
+              <div class="rule-index">01</div>
+              <div>
+                <h3>出发前检查</h3>
+                <p>头盔安全扣、上车捏离合、车辆状态和训练心态，先于所有动作。</p>
               </div>
-              <div class="principle-layout principle-layout--compact">
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/></svg>
-                    </span>
-                    <span class="tag">方向</span>
-                  </div>
-                  <h3>视线锁定</h3>
-                  <p>不要盯障碍、不要盯车头。视线去哪里，路线就会向哪里展开。</p>
-                </article>
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M4 18c8-11 11-11 16 0"/><path d="M6 18h4"/><path d="M14 18h4"/></svg>
-                    </span>
-                    <span class="tag">路线</span>
-                  </div>
-                  <h3>大进小出</h3>
-                  <p>进入弯道前把路线打开，出弯时让车更自然地回到目标方向。</p>
-                </article>
-                <article class="principle-card">
-                  <div class="card-topline">
-                    <span class="card-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/><path d="M7 17c4-4 6-4 10 0"/></svg>
-                    </span>
-                    <span class="tag">后刹</span>
-                  </div>
-                  <h3>过弯轻踩后刹，出弯补油</h3>
-                  <p>后刹帮助增加过弯下压力，出弯松刹车再补油，让动作连贯。</p>
-                </article>
+              <ul>
+                <li>捏离合上车，防止冲车。</li>
+                <li>扣具闭合，头盔防护才完整。</li>
+                <li>不骑“最后一圈”。</li>
+              </ul>
+            </article>
+
+            <article class="rule-row">
+              <div class="rule-index">02</div>
+              <div>
+                <h3>人车一体</h3>
+                <p>核心与双腿先稳定，手部才不会把紧张传给车辆。</p>
               </div>
-            </section>
+              <ul>
+                <li>收紧核心，夹紧双腿。</li>
+                <li>左手放松，右手油门稳定。</li>
+                <li>车身正直时清晰使用前刹。</li>
+              </ul>
+            </article>
+
+            <article class="rule-row">
+              <div class="rule-index">03</div>
+              <div>
+                <h3>看向出口</h3>
+                <p>视线决定方向，路线承接重心，后刹服务弯中稳定。</p>
+              </div>
+              <ul>
+                <li>不要盯车头或障碍。</li>
+                <li>弯道采用“大进小出”。</li>
+                <li>过弯轻踩后刹，出弯补油。</li>
+              </ul>
+            </article>
           </div>
         </section>
       </section>
 
       <section class="page-view" id="lessons" data-page="lessons" aria-labelledby="lesson-title">
-        <section class="section page-heading">
-          <p class="eyebrow">Lesson Archive</p>
-          <h2 id="lesson-title">课程档案</h2>
-          <p>每节课保留训练内容、动作口令和当次照片视频。这里记录真实训练过程，核心经验再向上沉淀到“核心原则”。</p>
+        <section class="section lesson-hero">
+          <div class="lesson-hero__copy">
+            <p class="eyebrow">Training Trace</p>
+            <h2 id="lesson-title">训练轨迹</h2>
+            <p>训练不是多跑几圈，而是每一圈带着问题回来，再带着目标出去。发现错误，思考原因，下一圈有意识地纠偏。</p>
+          </div>
+          <figure class="lesson-cover">
+            <img src="assets/brand/roadcraft-night-ride.jpg" alt="夜色中摩托车尾灯与道路光影">
+            <figcaption>
+              <span>Training Trace</span>
+              <strong>训练轨迹</strong>
+            </figcaption>
+          </figure>
         </section>
 
-        <section class="section section--dark">
-          <div class="section__heading section__heading--split">
-            <div>
-              <p class="eyebrow">Lesson 1</p>
-              <h2>重心、油离、惯性与基础转弯</h2>
-            </div>
-            <aside class="progress-card" aria-label="课程记录进度">
-              <span>当前进度</span>
-              <strong>1 / 7-8</strong>
-              <p>只记录已上课程，后续按 Lesson 2、Lesson 3 继续追加。</p>
-            </aside>
+        <section class="section lesson-feature">
+          <div class="lesson-title">
+            <p class="eyebrow">Lesson 1</p>
+            <h2>重心、油离、惯性与基础转弯</h2>
+            <p>第一节课先把车、人和动作关系拉清楚：扶得住车，起得了步，收得住惯性，转得进路线。</p>
           </div>
 
-          <article class="lesson-panel">
-            <div class="lesson-panel__header">
-              <div>
-                <p class="lesson-number">Lesson 1</p>
-                <h3>重心、油离、惯性与基础转弯</h3>
-              </div>
-              <div class="lesson-stats" aria-label="Lesson 1 重点数量">
-                <span>4 个练习</span>
-                <span>9 个动作口令</span>
-              </div>
-            </div>
+          <div class="practice-grid">
+            <article>
+              <span>01</span>
+              <h3>扶车</h3>
+              <p>建立车辆重心感，理解核心发力与扶车支点。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>坡起</h3>
+              <p>控制离合、油门与车身移动之间的节奏。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>惯性</h3>
+              <p>加速收核心，收油直腰，建立送油门接刹车的习惯。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>转弯</h3>
+              <p>用视线、重心、后刹和补油形成连续动作。</p>
+            </article>
+          </div>
+        </section>
 
-            <div class="practice-list">
-              <section class="practice">
-                <div class="practice__index">01</div>
-                <div class="practice__body">
-                  <h4>原地不上车扶车</h4>
-                  <p>感受车辆重心，感受核心发力。重点不是硬拽车，而是找到车身从轻到重的临界感。</p>
-                </div>
-              </section>
-              <section class="practice">
-                <div class="practice__index">02</div>
-                <div class="practice__body">
-                  <h4>原地坡起</h4>
-                  <p>感受油离配合。让离合、油门和车身移动之间形成稳定节奏。</p>
-                </div>
-              </section>
-              <section class="practice">
-                <div class="practice__index">03</div>
-                <div class="practice__body">
-                  <h4>加速与收油惯性</h4>
-                  <p>加速时弯腰收核心；松油门时直腰，抵消惯性。持续养成送油门接刹车的习惯。</p>
-                </div>
-              </section>
-              <section class="practice">
-                <div class="practice__index">04</div>
-                <div class="practice__body">
-                  <h4>左侧、右侧压弯转弯</h4>
-                  <p>转弯不是靠手把硬拧，而是靠重心变换。路线、视线、后刹和补油要连成一个动作。</p>
-                </div>
-              </section>
-            </div>
+        <section class="section lesson-record" aria-labelledby="record-title">
+          <div class="section-kicker">
+            <p class="eyebrow">Ride Log</p>
+            <h2 id="record-title">训练记录</h2>
+            <p>照片用于复盘身体姿态、车辆倾角和路线选择。每一张都要能回到一个具体动作，而不是只当作留念。</p>
+          </div>
+          <div class="training-gallery">
+            <figure>
+              <img src="assets/training/lesson1/lesson1-ride-01.jpg" alt="Lesson 1 训练照片 1">
+              <figcaption>视线与路线</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/training/lesson1/lesson1-ride-02.jpg" alt="Lesson 1 训练照片 2">
+              <figcaption>入弯姿态</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/training/lesson1/lesson1-ride-03.jpg" alt="Lesson 1 训练照片 3">
+              <figcaption>重心变化</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/training/lesson1/lesson1-ride-04.jpg" alt="Lesson 1 训练照片 4">
+              <figcaption>出弯控制</figcaption>
+            </figure>
+          </div>
+        </section>
 
-            <div class="lesson-details">
-              <div class="detail-block">
-                <h4>手部</h4>
-                <ul>
-                  <li>左手放松，否则左转时车辆已经随重心过来，左手一紧张又会把车推回去。</li>
-                  <li>右手油门稳定，避免过弯时突兀给油或收油。</li>
-                </ul>
-              </div>
-              <div class="detail-block">
-                <h4>路线</h4>
-                <ul>
-                  <li>视线决定要去的方向。</li>
-                  <li>弯道采用“大进小出”的路线思路。</li>
-                </ul>
-              </div>
-              <div class="detail-block">
-                <h4>刹车与出弯</h4>
-                <ul>
-                  <li>过弯轻踩后刹车，出弯松刹车补油。</li>
-                  <li>踩后刹车相当于让弹簧向地面增加一个推力，加大过弯下压力。</li>
-                </ul>
-              </div>
-              <div class="detail-block">
-                <h4>身体</h4>
-                <ul>
-                  <li>核心收紧。</li>
-                  <li>腿夹紧不要松。</li>
-                  <li>真正学会骑车转弯，是学会靠重心变换让车转。</li>
-                </ul>
-              </div>
-            </div>
-
-            <section class="lesson-media" aria-labelledby="lesson1-media-title">
-              <div>
-                <p class="eyebrow">Media</p>
-                <h4 id="lesson1-media-title">Lesson 1 来时路素材</h4>
-                <p>照片和视频可以放在这里，记录扶车、坡起、加速收油、左右压弯这些训练瞬间。</p>
-              </div>
-              <div class="media-rail" aria-label="Lesson 1 素材占位">
-                <article class="media-card media-card--empty">
-                  <span>Photo</span>
-                  <h3>训练照片待补</h3>
-                  <p>适合放动作瞬间、骑姿、路线和教练现场指导照片。</p>
-                </article>
-                <article class="media-card media-card--empty">
-                  <span>Video</span>
-                  <h3>训练视频待补</h3>
-                  <p>适合放短视频片段，比如坡起、过弯、后刹和补油节奏。</p>
-                </article>
-              </div>
-            </section>
-          </article>
+        <section class="section lesson-archive" aria-labelledby="archive-title">
+          <div class="archive-head">
+            <p class="eyebrow">Course Files</p>
+            <h2 id="archive-title">课程档案</h2>
+          </div>
+          <div class="lesson-slots" aria-label="七到八节私教课记录栏位">
+            <article class="lesson-slot is-filled">
+              <span>Lesson 1</span>
+              <strong>重心 / 油离 / 转弯</strong>
+              <p>已记录</p>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 2</span>
+              <strong>待记录</strong>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 3</span>
+              <strong>待记录</strong>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 4</span>
+              <strong>待记录</strong>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 5</span>
+              <strong>待记录</strong>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 6</span>
+              <strong>待记录</strong>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 7</span>
+              <strong>待记录</strong>
+            </article>
+            <article class="lesson-slot">
+              <span>Lesson 8</span>
+              <strong>待记录</strong>
+            </article>
+          </div>
         </section>
       </section>
 
       <section class="page-view" id="coach" data-page="coach" aria-labelledby="coach-title">
-        <section class="section page-heading">
-          <p class="eyebrow">Coach Profile</p>
-          <h2 id="coach-title">老罗风采</h2>
-          <p>这部分面向想了解课程的摩友：先看到教练气质和专业背书，再了解课程适合谁、能解决什么问题。</p>
+        <section class="section coach-profile">
+          <figure class="coach-image">
+            <img src="assets/laoluo-roadcraft-portrait-clean.jpg" alt="老罗老师训练场照片">
+            <figcaption>
+              <span>RoadCraft Instructor</span>
+              <strong>老罗</strong>
+            </figcaption>
+          </figure>
+          <div class="coach-copy">
+            <p class="eyebrow">The Instructor</p>
+            <h2 id="coach-title">老罗 RoadCraft</h2>
+            <p>冠军教练、认证教练员，专注安全驾驶、低速控车、路线意识和私教训练。课程强调理解车辆、控制车辆，并始终敬畏风险。</p>
+          </div>
         </section>
 
-        <section class="section section--coach-redesign">
-          <div class="coach-showcase">
-            <figure class="coach-portrait">
-              <img src="assets/laoluo-coach-crop.png" alt="老罗老师训练场照片">
-            </figure>
-            <div class="coach-story">
-              <p class="eyebrow">摩安骑行学院 总教官</p>
-              <h3>罗老师</h3>
-              <p>冠军教练、认证教练员，专注安全驾驶、低速控车、路线意识和私教训练。课程目标不是“骑得猛”，而是让摩友真正理解车、控制车、敬畏风险。</p>
-              <div class="coach-badges" aria-label="老罗老师身份标签">
-                <span>总教官</span>
-                <span>冠军教练</span>
-                <span>亲自授课</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="coach-proof-grid">
-            <article>
-              <span>01</span>
-              <h3>认证背景</h3>
-              <p>北汽摩协认证教练员，摩安骑行学院教学负责人。</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>赛事经验</h3>
-              <p>金卡纳赛事冠军指导教练、赛事主裁等经历。</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>课程价值</h3>
-              <p>帮助摩友建立安全驾驶意识，掌握可复盘、可练习的控车细节。</p>
-            </article>
-          </div>
+        <section class="section coach-credentials" aria-label="教官资历">
+          <article>
+            <span>01</span>
+            <h3>认证背景</h3>
+            <p>北汽摩协认证教练员，摩安骑行学院教学负责人。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>赛事经验</h3>
+            <p>金卡纳赛事冠军指导教练、赛事主裁等经历。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>课程价值</h3>
+            <p>建立安全驾驶意识，掌握可练习、可复盘的控车细节。</p>
+          </article>
         </section>
       </section>
     </main>
 
     <footer class="footer">
-      <p>安全驾驶知识库持续建设中。实际训练以教练现场指导、合法场地和安全装备为准。</p>
+      <p>实际训练请遵循教练现场指导，选择合法场地，并佩戴完整安全装备。</p>
     </footer>
 
     <script>
@@ -490,6 +339,7 @@
 
       function activatePage(pageName) {
         const nextPage = validPages.has(pageName) ? pageName : "rules";
+        document.body.dataset.activePage = nextPage;
 
         pages.forEach((page) => {
           const isActive = page.dataset.page === nextPage;
