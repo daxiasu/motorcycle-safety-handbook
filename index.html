@@ -9,6 +9,67 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body data-active-page="rules">
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-balance" viewBox="0 0 48 48">
+        <path d="M7 34h7m20 0h7" />
+        <circle cx="14" cy="34" r="5.5" />
+        <circle cx="34" cy="34" r="5.5" />
+        <path d="M14 34l7-13h8l5 13" />
+        <path d="M22 21l-5 13" />
+        <path d="M23 17h9l3 4" />
+        <path d="M17 14c3.4 2.2 6.9 3 10.5 2.2" />
+        <path d="M24 7v10" />
+        <path d="M18 12l6-5 6 5" />
+      </symbol>
+      <symbol id="icon-hill-start" viewBox="0 0 48 48">
+        <path d="M6 38h36" />
+        <path d="M10 34l26-16" />
+        <circle cx="18" cy="30" r="4.5" />
+        <circle cx="31" cy="22" r="4.5" />
+        <path d="M18 30l7-11h7" />
+        <path d="M24 19l7 3" />
+        <path d="M34 10l6 6-6 6" />
+        <path d="M24 16h15" />
+      </symbol>
+      <symbol id="icon-inertia" viewBox="0 0 48 48">
+        <path d="M7 33h10" />
+        <path d="M5 25h15" />
+        <path d="M9 17h8" />
+        <circle cx="17" cy="36" r="4.5" />
+        <circle cx="34" cy="36" r="4.5" />
+        <path d="M17 36l7-13h8l2 13" />
+        <path d="M24 23l9-6" />
+        <path d="M31 12c4.5 2.4 7 6.2 7.5 11.3" />
+        <path d="M39 15l-.5 8.3-7-4.2" />
+      </symbol>
+      <symbol id="icon-corner" viewBox="0 0 48 48">
+        <path d="M9 36c11.5-1 17.5-7 18-18" />
+        <path d="M27 18l-6 5.5" />
+        <path d="M27 18l5.5 6" />
+        <circle cx="13" cy="36" r="4" />
+        <circle cx="31" cy="18" r="4" />
+        <path d="M12 12h8" />
+        <path d="M16 8v8" />
+        <path d="M35 31h6" />
+        <path d="M38 28v6" />
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 48 48">
+        <path d="M10 12h18l10 10v14H10z" />
+        <path d="M28 12v10h10" />
+        <path d="M16 29h16" />
+        <path d="M16 35h10" />
+        <path d="M15 20h7" />
+      </symbol>
+      <symbol id="icon-pending" viewBox="0 0 48 48">
+        <path d="M12 12h24v24H12z" />
+        <path d="M18 24h12" />
+        <path d="M24 18v12" />
+        <path d="M9 18h3" />
+        <path d="M9 30h3" />
+        <path d="M36 18h3" />
+        <path d="M36 30h3" />
+      </symbol>
+    </svg>
     <script>
       document.body.dataset.activePage = ["rules", "lessons", "coach"].includes(location.hash.replace("#", ""))
         ? location.hash.replace("#", "")
@@ -201,22 +262,34 @@
 
           <div class="practice-grid">
             <article>
-              <span>01</span>
+              <div class="practice-card__top">
+                <span>01</span>
+                <svg class="line-icon" aria-hidden="true"><use href="#icon-balance"></use></svg>
+              </div>
               <h3>扶车</h3>
               <p>建立车辆重心感，理解核心发力与扶车支点。</p>
             </article>
             <article>
-              <span>02</span>
+              <div class="practice-card__top">
+                <span>02</span>
+                <svg class="line-icon" aria-hidden="true"><use href="#icon-hill-start"></use></svg>
+              </div>
               <h3>坡起</h3>
               <p>控制离合、油门与车身移动之间的节奏。</p>
             </article>
             <article>
-              <span>03</span>
+              <div class="practice-card__top">
+                <span>03</span>
+                <svg class="line-icon" aria-hidden="true"><use href="#icon-inertia"></use></svg>
+              </div>
               <h3>惯性</h3>
               <p>加速收核心，收油直腰，建立送油门接刹车的习惯。</p>
             </article>
             <article>
-              <span>04</span>
+              <div class="practice-card__top">
+                <span>04</span>
+                <svg class="line-icon" aria-hidden="true"><use href="#icon-corner"></use></svg>
+              </div>
               <h3>转弯</h3>
               <p>用视线、重心、后刹和补油形成连续动作。</p>
             </article>
@@ -256,36 +329,60 @@
           </div>
           <div class="lesson-slots" aria-label="七到八节私教课记录栏位">
             <article class="lesson-slot is-filled">
-              <span>Lesson 1</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 1</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-course"></use></svg>
+              </div>
               <strong>重心 / 油离 / 转弯</strong>
               <p>已记录</p>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 2</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 2</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 3</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 3</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 4</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 4</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 5</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 5</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 6</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 6</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 7</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 7</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
             <article class="lesson-slot">
-              <span>Lesson 8</span>
+              <div class="lesson-slot__top">
+                <span>Lesson 8</span>
+                <svg class="line-icon line-icon--small" aria-hidden="true"><use href="#icon-pending"></use></svg>
+              </div>
               <strong>待记录</strong>
             </article>
           </div>

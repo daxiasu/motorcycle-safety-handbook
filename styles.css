@@ -49,6 +49,33 @@ img {
   max-width: 100%;
 }
 
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.line-icon {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+  color: rgba(244, 238, 226, 0.9);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 14px rgba(199, 160, 90, 0.2));
+}
+
+.line-icon--small {
+  width: 38px;
+  height: 38px;
+  color: rgba(199, 160, 90, 0.86);
+  stroke-width: 1.9;
+}
+
 .site-hero {
   min-height: 92vh;
   position: relative;
@@ -1001,17 +1028,63 @@ body:not([data-active-page="rules"]) .hero-system {
 
 .practice-grid article {
   min-height: 260px;
+  position: relative;
+  overflow: hidden;
   padding: 24px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background:
     linear-gradient(135deg, rgba(199, 160, 90, 0.08), transparent 38%),
     rgba(12, 10, 8, 0.72);
+  transition: background 220ms ease, transform 220ms ease;
 }
 
-.practice-grid span {
+.practice-grid article::after,
+.lesson-slot::after {
+  content: "";
+  position: absolute;
+  inset: auto -40px -60px auto;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(199, 160, 90, 0.1);
+  border-radius: 50%;
+  opacity: 0.64;
+  pointer-events: none;
+}
+
+.practice-grid article:hover {
+  background:
+    linear-gradient(135deg, rgba(199, 160, 90, 0.13), transparent 42%),
+    rgba(16, 13, 9, 0.86);
+  transform: translateY(-2px);
+}
+
+.practice-grid article:hover .line-icon {
+  color: #f4eee2;
+  filter: drop-shadow(0 0 18px rgba(199, 160, 90, 0.36));
+}
+
+.practice-card__top,
+.lesson-slot__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.practice-card__top {
+  min-height: 84px;
+  margin-bottom: 34px;
+}
+
+.practice-card__top span,
+.lesson-slot__top span {
   display: block;
-  margin-bottom: 78px;
+  margin: 0;
+}
+
+.practice-card__top .line-icon {
+  margin-top: -4px;
 }
 
 .lesson-record {
@@ -1099,6 +1172,8 @@ body:not([data-active-page="rules"]) .hero-system {
 
 .lesson-slot {
   min-height: 174px;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1108,6 +1183,12 @@ body:not([data-active-page="rules"]) .hero-system {
   background:
     linear-gradient(135deg, rgba(199, 160, 90, 0.06), transparent 44%),
     rgba(12, 10, 8, 0.62);
+}
+
+.lesson-slot::after {
+  width: 118px;
+  height: 118px;
+  opacity: 0.42;
 }
 
 .lesson-slot:not(.is-filled) {
@@ -1120,9 +1201,22 @@ body:not([data-active-page="rules"]) .hero-system {
     rgba(16, 13, 9, 0.88);
 }
 
-.lesson-slot span {
+.lesson-slot > span {
   display: block;
   margin-bottom: 30px;
+}
+
+.lesson-slot__top {
+  margin-bottom: 24px;
+}
+
+.lesson-slot:not(.is-filled) .line-icon {
+  color: rgba(244, 238, 226, 0.52);
+}
+
+.lesson-slot.is-filled .line-icon {
+  color: rgba(199, 160, 90, 0.96);
+  filter: drop-shadow(0 0 16px rgba(199, 160, 90, 0.24));
 }
 
 .lesson-slot strong {
@@ -1521,6 +1615,11 @@ body:not([data-active-page="rules"]) .hero-system {
   .practice-grid span,
   .coach-credentials span {
     margin-bottom: 34px;
+  }
+
+  .practice-card__top span,
+  .lesson-slot__top span {
+    margin-bottom: 0;
   }
 
   .practice-grid article,
