@@ -1113,6 +1113,18 @@ body:not([data-active-page="rules"]) .hero-system {
   box-shadow: 0 26px 62px rgba(0, 0, 0, 0.32);
 }
 
+.training-gallery .training-note {
+  min-height: clamp(300px, 33vw, 420px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  background:
+    linear-gradient(145deg, rgba(199, 160, 90, 0.14), transparent 42%),
+    radial-gradient(circle at 76% 18%, rgba(244, 238, 226, 0.08), transparent 28%),
+    rgba(12, 10, 8, 0.78);
+}
+
 .training-gallery figure:nth-child(1),
 .training-gallery figure:nth-child(3) {
   height: clamp(360px, 41vw, 450px);
@@ -1136,6 +1148,17 @@ body:not([data-active-page="rules"]) .hero-system {
   pointer-events: none;
 }
 
+.training-gallery .training-note::before {
+  content: "";
+  position: absolute;
+  right: -42px;
+  top: -42px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(199, 160, 90, 0.14);
+  border-radius: 50%;
+}
+
 .training-gallery img {
   width: 100%;
   height: 100%;
@@ -1145,6 +1168,26 @@ body:not([data-active-page="rules"]) .hero-system {
   filter: saturate(0.68) contrast(1.1) brightness(0.78);
 }
 
+.training-note span {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.training-note strong {
+  position: relative;
+  z-index: 1;
+  max-width: 8em;
+  color: var(--ink);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.06;
+}
+
 .training-gallery figcaption {
   position: absolute;
   left: 18px;
@@ -1152,6 +1195,18 @@ body:not([data-active-page="rules"]) .hero-system {
   z-index: 1;
   margin: 0;
   color: #f0e6d8;
+}
+
+.training-note figcaption {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  max-width: 13em;
+  margin-top: 18px;
+  color: var(--soft);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .lesson-archive {
