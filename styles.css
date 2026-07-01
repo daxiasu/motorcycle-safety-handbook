@@ -1009,6 +1009,16 @@ body:not([data-active-page="rules"]) .hero-system {
   align-items: start;
 }
 
+.lesson-feature + .lesson-feature {
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.lesson-feature--review .lesson-title h2,
+.lesson-feature--lesson2 .lesson-title h2 {
+  font-size: clamp(32px, 4.4vw, 58px);
+}
+
 .lesson-title {
   position: sticky;
   top: 24px;
@@ -1024,6 +1034,10 @@ body:not([data-active-page="rules"]) .hero-system {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
+}
+
+.practice-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .practice-grid article {
