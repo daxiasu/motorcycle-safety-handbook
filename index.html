@@ -7,8 +7,10 @@
     <meta name="description" content="老罗 RoadCraft：路上功夫。摩托车安全驾驶、控车基础与弯道路线训练。">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="roadcraft-v2.css">
   </head>
   <body data-active-page="rules">
+    <div class="page-sweep" aria-hidden="true"></div>
     <svg class="icon-sprite" aria-hidden="true" focusable="false">
       <symbol id="icon-balance" viewBox="0 0 48 48">
         <path d="M7 34h7m20 0h7" />
@@ -136,7 +138,7 @@
       <nav class="topbar" aria-label="页面导航">
         <a class="brand" href="#rules" aria-label="老罗 RoadCraft：路上功夫 首页">
           <span class="brand__mark" aria-hidden="true">
-            <img src="assets/brand/roadcraft-mark.jpg" alt="">
+            <img src="assets/brand/roadcraft-mark.jpg" alt="" width="512" height="512" decoding="async">
           </span>
           <span class="brand__name">
             <strong>老罗 RoadCraft</strong>
@@ -156,7 +158,7 @@
           <h1 id="page-title">路上功夫</h1>
         </div>
         <figure class="hero-moto" aria-label="行驶中的摩托车线条视觉">
-          <img src="assets/brand/roadcraft-light-bike.jpg" alt="金色光线勾勒的摩托车与骑手">
+          <img src="assets/brand/roadcraft-light-bike.jpg" alt="金色光线勾勒的摩托车与骑手" width="1536" height="1024" decoding="async" fetchpriority="high">
           <span class="moto-spot" aria-hidden="true"></span>
         </figure>
       </section>
@@ -199,9 +201,19 @@
             </div>
           </div>
           <div class="rule-visual__media" aria-hidden="true">
-            <img class="rule-visual__main" src="assets/photo/cornering-road.jpg" alt="">
-            <img class="rule-visual__cockpit" src="assets/photo/cockpit-detail.jpg" alt="">
-            <img class="rule-visual__bike" src="assets/photo/classic-black.jpg" alt="">
+            <img class="rule-visual__main" src="assets/photo/cornering-road.jpg" alt="" width="570" height="780" loading="lazy" decoding="async">
+            <svg class="force-route" viewBox="0 0 760 580" preserveAspectRatio="none">
+              <path class="force-route__ghost" d="M78 495C205 470 265 398 322 305C385 202 470 151 690 112"></path>
+              <path class="force-route__line" d="M78 495C205 470 265 398 322 305C385 202 470 151 690 112"></path>
+              <circle cx="78" cy="495" r="5"></circle>
+              <circle cx="322" cy="305" r="5"></circle>
+              <circle cx="690" cy="112" r="5"></circle>
+            </svg>
+            <div class="force-readout">
+              <span>01 判断</span>
+              <span>02 训练</span>
+              <span>03 纠偏</span>
+            </div>
           </div>
         </section>
 
@@ -213,7 +225,7 @@
           </div>
 
           <figure class="rider-stage" aria-label="车手与摩托车互动要点图">
-            <img src="assets/photo/rider-front.jpg" alt="真实摩托车骑士正面照片，用于标注安全驾驶注意点">
+            <img src="assets/photo/rider-front.jpg" alt="真实摩托车骑士正面照片，用于标注安全驾驶注意点" width="827" height="1015" loading="lazy" decoding="async">
             <button class="hotspot hotspot--helmet" type="button" aria-label="头盔安全扣">
               <span></span>
               <strong>扣具闭合</strong>
@@ -248,7 +260,7 @@
             <p>纪律不是口号，是每次上车前、速度变化时、进弯前、出弯前都能重复执行的动作顺序。</p>
           </div>
           <figure class="discipline-media" aria-hidden="true">
-            <img src="assets/photo/tunnel-motion.jpg" alt="">
+            <img src="assets/photo/tunnel-motion.jpg" alt="" width="1080" height="862" loading="lazy" decoding="async">
           </figure>
 
           <div class="rule-rows">
@@ -293,9 +305,10 @@
               </ul>
             </article>
 
-            <article class="rule-row">
+            <article class="rule-row rule-row--safety">
               <div class="rule-index">04</div>
               <div>
+                <span class="rule-type">Safety Rule</span>
                 <h3>超车先被看见</h3>
                 <p>对方没有确认你的存在，就不要贸然进入他的路线。</p>
               </div>
@@ -383,7 +396,7 @@
             <p>训练不是多跑几圈，而是每一圈带着问题回来，再带着目标出去。发现错误，思考原因，下一圈有意识地纠偏。</p>
           </div>
           <figure class="lesson-cover">
-            <img src="assets/brand/roadcraft-night-ride.jpg" alt="夜色中摩托车尾灯与道路光影">
+            <img src="assets/brand/roadcraft-night-ride.jpg" alt="夜色中摩托车尾灯与道路光影" width="1536" height="1024" loading="lazy" decoding="async">
             <figcaption>
               <span>Training Trace</span>
               <strong>训练轨迹</strong>
@@ -391,11 +404,42 @@
           </figure>
         </section>
 
-        <section class="section lesson-feature">
+        <div class="lesson-roadbook">
+          <aside class="lesson-rail" aria-label="课程进度">
+            <div class="lesson-rail__head">
+              <span>Course Progress</span>
+              <strong>04 <small>/ 08</small></strong>
+            </div>
+            <ol>
+              <li><button class="is-complete" type="button" data-lesson-target="lesson-1"><span>01</span><b>基础控车</b></button></li>
+              <li class="lesson-rail__review"><button type="button" data-lesson-target="review-0630"><span>R</span><b>复习纠偏</b></button></li>
+              <li><button class="is-complete" type="button" data-lesson-target="lesson-2"><span>02</span><b>小半径掉头</b></button></li>
+              <li><button class="is-complete" type="button" data-lesson-target="lesson-3"><span>03</span><b>连续转弯</b></button></li>
+              <li><button class="is-current" type="button" data-lesson-target="lesson-4"><span>04</span><b>S 穿桩</b></button></li>
+              <li><button type="button" disabled><span>05</span><b>待训练</b></button></li>
+              <li><button type="button" disabled><span>06</span><b>待训练</b></button></li>
+              <li><button type="button" disabled><span>07</span><b>待训练</b></button></li>
+              <li><button type="button" disabled><span>08</span><b>待训练</b></button></li>
+            </ol>
+          </aside>
+
+          <div class="lesson-course">
+        <section class="section lesson-feature" id="lesson-1" data-course-section>
           <div class="lesson-title">
             <p class="eyebrow">Lesson 1</p>
             <h2>重心、油离、惯性与基础转弯</h2>
             <p>第一节课先把车、人和动作关系拉清楚：扶得住车，起得了步，收得住惯性，转得进路线。</p>
+            <figure class="lesson-path lesson-path--foundation" aria-label="身体、车辆与路线的基础关系">
+              <svg viewBox="0 0 360 150" aria-hidden="true">
+                <path class="lesson-path__guide" d="M28 108H332"></path>
+                <path class="lesson-path__active" d="M40 108C88 108 92 48 140 48S192 108 238 108S282 48 324 48"></path>
+                <circle cx="40" cy="108" r="5"></circle>
+                <circle cx="140" cy="48" r="5"></circle>
+                <circle cx="238" cy="108" r="5"></circle>
+                <circle cx="324" cy="48" r="5"></circle>
+              </svg>
+              <figcaption><span>重心</span><span>油离</span><span>惯性</span><span>路线</span></figcaption>
+            </figure>
           </div>
 
           <div class="practice-grid">
@@ -434,7 +478,7 @@
           </div>
         </section>
 
-        <section class="section lesson-feature lesson-feature--review">
+        <section class="section lesson-feature lesson-feature--review" id="review-0630" data-course-section>
           <div class="lesson-title">
             <p class="eyebrow">Review 0630</p>
             <h2>核心、停车与弯中重心</h2>
@@ -469,11 +513,21 @@
           </div>
         </section>
 
-        <section class="section lesson-feature lesson-feature--lesson2">
+        <section class="section lesson-feature lesson-feature--lesson2" id="lesson-2" data-course-section>
           <div class="lesson-title">
             <p class="eyebrow">Lesson 2</p>
             <h2>小半径掉头</h2>
             <p>小半径不是靠硬倒车身，而是用核心、腿、舵面、后刹和视线顺序，把车带进更小的转弯半径。</p>
+            <figure class="lesson-path lesson-path--uturn" aria-label="小半径掉头路线">
+              <svg viewBox="0 0 360 150" aria-hidden="true">
+                <path class="lesson-path__guide" d="M30 112H330"></path>
+                <path class="lesson-path__active" d="M42 112H236C294 112 306 36 244 30C184 24 168 84 204 108"></path>
+                <circle cx="42" cy="112" r="5"></circle>
+                <circle cx="244" cy="30" r="5"></circle>
+                <path class="lesson-path__arrow" d="M195 99l9 9-12 4"></path>
+              </svg>
+              <figcaption><span>入弯</span><span>转头送肩</span><span>后刹</span><span>出弯</span></figcaption>
+            </figure>
           </div>
 
           <div class="practice-grid">
@@ -512,11 +566,21 @@
           </div>
         </section>
 
-        <section class="section lesson-feature lesson-feature--lesson3">
+        <section class="section lesson-feature lesson-feature--lesson3" id="lesson-3" data-course-section>
           <div class="lesson-title">
             <p class="eyebrow">Lesson 3</p>
             <h2>左右转弯衔接</h2>
             <p>2X 八字弯开始训练连续弯里的路线判断、重心切换和油门衔接。核心不是多绕几圈，而是让每一次入弯、过弯、出弯都有顺序。</p>
+            <figure class="lesson-path lesson-path--eight" aria-label="连续八字弯路线">
+              <svg viewBox="0 0 360 150" aria-hidden="true">
+                <path class="lesson-path__guide" d="M24 75H336"></path>
+                <path class="lesson-path__active" d="M180 75C132 12 52 24 58 76C64 128 137 126 180 75C223 24 296 22 302 74C308 126 228 138 180 75Z"></path>
+                <circle cx="58" cy="76" r="5"></circle>
+                <circle cx="180" cy="75" r="5"></circle>
+                <circle cx="302" cy="74" r="5"></circle>
+              </svg>
+              <figcaption><span>大进</span><span>视线切换</span><span>晚收油</span><span>小出</span></figcaption>
+            </figure>
           </div>
 
           <div class="practice-grid">
@@ -603,11 +667,22 @@
           </div>
         </section>
 
-        <section class="section lesson-feature lesson-feature--lesson4">
+        <section class="section lesson-feature lesson-feature--lesson4" id="lesson-4" data-course-section>
           <div class="lesson-title">
             <p class="eyebrow">Lesson 4</p>
             <h2>S 穿桩 / 快速变线</h2>
             <p>S 穿桩可以理解为快速变线，训练的是跟车、躲避、变线时的重心切换。它不是耐力式慢练，而是一组短促、明确、连续的全身发力。</p>
+            <figure class="lesson-path lesson-path--slalom" aria-label="S 穿桩快速变线路线">
+              <svg viewBox="0 0 360 150" aria-hidden="true">
+                <path class="lesson-path__guide" d="M32 75H328"></path>
+                <path class="lesson-path__active" d="M34 118C78 118 70 30 118 30S158 118 206 118S246 30 326 30"></path>
+                <circle class="lesson-path__cone" cx="82" cy="75" r="5"></circle>
+                <circle class="lesson-path__cone" cx="162" cy="75" r="5"></circle>
+                <circle class="lesson-path__cone" cx="242" cy="75" r="5"></circle>
+                <circle class="lesson-path__cone" cx="322" cy="75" r="5"></circle>
+              </svg>
+              <figcaption><span>倾倒</span><span>后刹</span><span>松刹回正</span><span>反向倾倒</span></figcaption>
+            </figure>
           </div>
 
           <div class="practice-grid practice-grid--five">
@@ -653,6 +728,8 @@
             </article>
           </div>
         </section>
+          </div>
+        </div>
 
         <section class="section lesson-record" aria-labelledby="record-title">
           <div class="section-kicker">
@@ -762,7 +839,7 @@
       <section class="page-view" id="coach" data-page="coach" aria-labelledby="coach-title">
         <section class="section coach-profile">
           <figure class="coach-image">
-            <img src="assets/laoluo-roadcraft-portrait-clean.jpg" alt="老罗老师训练场照片">
+            <img src="assets/laoluo-roadcraft-portrait-clean.jpg" alt="老罗老师训练场照片" width="945" height="1080" loading="lazy" decoding="async">
             <figcaption>
               <span>RoadCraft Instructor</span>
               <strong>老罗</strong>
@@ -801,10 +878,13 @@
 
     <script>
       const pageLinks = Array.from(document.querySelectorAll("[data-page-link]"));
+      const pageTriggers = [...pageLinks, document.querySelector(".brand")].filter(Boolean);
       const pages = Array.from(document.querySelectorAll("[data-page]"));
       const validPages = new Set(pages.map((page) => page.dataset.page));
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let sweepTimer;
 
-      function activatePage(pageName) {
+      function activatePage(pageName, resetScroll = false) {
         const nextPage = validPages.has(pageName) ? pageName : "rules";
         document.body.dataset.activePage = nextPage;
 
@@ -819,19 +899,93 @@
           link.classList.toggle("is-active", isActive);
           link.setAttribute("aria-selected", String(isActive));
         });
+
+        if (resetScroll) {
+          window.scrollTo(0, 0);
+        }
       }
 
-      pageLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          activatePage(link.dataset.pageLink);
+      function runPageTransition(pageName, resetScroll = true) {
+        const update = () => activatePage(pageName, resetScroll);
+
+        window.clearTimeout(sweepTimer);
+        document.body.classList.remove("is-switching");
+        void document.body.offsetWidth;
+        document.body.classList.add("is-switching");
+        sweepTimer = window.setTimeout(() => document.body.classList.remove("is-switching"), 680);
+
+        if (document.startViewTransition && !reducedMotion.matches) {
+          document.startViewTransition(update);
+        } else {
+          update();
+        }
+      }
+
+      pageTriggers.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const nextPage = link.dataset.pageLink || "rules";
+
+          if (window.location.hash !== `#${nextPage}`) {
+            window.history.pushState(null, "", `#${nextPage}`);
+          }
+
+          runPageTransition(nextPage);
         });
       });
 
-      window.addEventListener("hashchange", () => {
-        activatePage(window.location.hash.replace("#", ""));
+      window.addEventListener("popstate", () => {
+        runPageTransition(window.location.hash.replace("#", "") || "rules");
       });
 
       activatePage(window.location.hash.replace("#", "") || "rules");
+
+      const lessonButtons = Array.from(document.querySelectorAll("[data-lesson-target]"));
+      const lessonSections = Array.from(document.querySelectorAll("[data-course-section]"));
+
+      function setActiveLesson(targetId) {
+        lessonButtons.forEach((button) => {
+          const isActive = button.dataset.lessonTarget === targetId;
+          button.classList.toggle("is-active", isActive);
+
+          if (isActive) {
+            button.setAttribute("aria-current", "step");
+          } else {
+            button.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      lessonButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = document.getElementById(button.dataset.lessonTarget);
+
+          if (target) {
+            setActiveLesson(target.id);
+            target.scrollIntoView({
+              behavior: reducedMotion.matches ? "auto" : "smooth",
+              block: "start"
+            });
+          }
+        });
+      });
+
+      if ("IntersectionObserver" in window) {
+        const lessonObserver = new IntersectionObserver((entries) => {
+          const visibleEntry = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (visibleEntry) {
+            setActiveLesson(visibleEntry.target.id);
+          }
+        }, {
+          rootMargin: "-20% 0px -62% 0px",
+          threshold: [0, 0.15, 0.35]
+        });
+
+        lessonSections.forEach((section) => lessonObserver.observe(section));
+      }
     </script>
   </body>
 </html>

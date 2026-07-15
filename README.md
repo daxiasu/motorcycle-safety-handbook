@@ -12,9 +12,10 @@
 
 ## 设计语言
 
+- Night Instrument：以夜间骑行仪表的精密感统领页面，不做赛博堆砌，也不做复古贴图。
 - Road Line：用弯道线、刹车线、视线方向线作为视觉基因。
 - Control Points：把头盔、视线、手、核心、腿、刹车做成人车关系的控制节点。
-- Black / Gold / Asphalt：黑来自柏油、皮革和机件阴影；金来自仪表、卡钳和金属铭牌。
+- Black / Gold / Signal Red：黑构成机械本体，金只标记判断、知识与路线，尾灯红只标记训练进度、风险和当前状态。
 - Engineer’s Calm：少解释，少堆砌，用秩序、比例和留白建立高级感。
 - Training Is The Luxury：真正贵的不是炫技，而是被训练过的判断力。
 
@@ -24,13 +25,15 @@
 
 - 骑行法则：从每次训练里持续提炼出来的安全驾驶与控车原则
 - 训练轨迹：逐节追加的课程记录，公开版只保留训练主题、动作要点和复盘方向
-- 教官老罗：老罗老师介绍与宣传素材
+- 老罗 RoadCraft：老罗老师介绍与品牌内容
 
 当前已记录 Lesson 1、0630 复习课、Lesson 2、Lesson 3（含 Part 2）和 Lesson 4，后续上到 Lesson 5 后再继续追加，不预填未上课程。
 
 ## 本地查看
 
 直接打开 `index.html` 即可查看。
+
+`styles.css` 保留基础页面样式，`roadcraft-v2.css` 承载 Night Instrument 视觉系统与响应式升级，便于后续持续迭代。
 
 ## 发布到 GitHub Pages
 
