@@ -1017,7 +1017,12 @@ body:not([data-active-page="rules"]) .hero-system {
 .lesson-feature--review .lesson-title h2,
 .lesson-feature--lesson2 .lesson-title h2,
 .lesson-feature--lesson3 .lesson-title h2,
-.lesson-feature--lesson4 .lesson-title h2 {
+.lesson-feature--lesson4 .lesson-title h2,
+.lesson-feature--lesson5 .lesson-title h2,
+.lesson-feature--lesson6 .lesson-title h2,
+.lesson-feature--lesson7 .lesson-title h2,
+.lesson-feature--lesson8 .lesson-title h2,
+.lesson-feature--lesson9 .lesson-title h2 {
   font-size: clamp(32px, 4.4vw, 58px);
 }
 
@@ -1144,6 +1149,30 @@ body:not([data-active-page="rules"]) .hero-system {
   font-size: 14px;
 }
 
+.lesson-reflection {
+  grid-column: 2;
+  margin-top: 28px;
+  padding: 24px 28px;
+  border-left: 2px solid var(--gold);
+  background: rgba(12, 10, 8, 0.62);
+}
+
+.lesson-reflection span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lesson-reflection p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--soft);
+}
+
 .lesson-record {
   display: grid;
   grid-template-columns: minmax(240px, 0.32fr) minmax(0, 0.68fr);
@@ -1161,6 +1190,14 @@ body:not([data-active-page="rules"]) .hero-system {
 
 .training-gallery--five {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.training-gallery--six {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.training-gallery--ten {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .training-gallery figure {
@@ -1514,6 +1551,10 @@ body:not([data-active-page="rules"]) .hero-system {
     grid-column: 1;
   }
 
+  .lesson-reflection {
+    grid-column: 1;
+  }
+
   .lesson-part,
   .practice-grid--five {
     grid-column: 1;
@@ -1547,6 +1588,14 @@ body:not([data-active-page="rules"]) .hero-system {
   }
 
   .training-gallery--five {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-gallery--six {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-gallery--ten {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1746,6 +1795,7 @@ body:not([data-active-page="rules"]) .hero-system {
   .practice-grid--five,
   .training-gallery,
   .training-gallery--five,
+  .training-gallery--ten,
   .lesson-slots,
   .coach-credentials {
     grid-template-columns: 1fr;

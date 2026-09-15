@@ -672,7 +672,7 @@ h1 {
 }
 
 .lesson-hero__copy::before {
-  content: "04 / 08";
+  content: "09 / 09";
   display: block;
   margin-bottom: 42px;
   color: rgba(221, 103, 74, 0.78);
@@ -772,7 +772,7 @@ h1 {
   top: 17px;
   bottom: 18px;
   width: 1px;
-  background: linear-gradient(var(--gold) 0 51%, rgba(226, 197, 141, 0.14) 51% 100%);
+  background: var(--gold);
 }
 
 .lesson-rail li {
@@ -865,6 +865,21 @@ h1 {
   font-size: 8px;
 }
 
+.lesson-rail__stage {
+  margin: 15px 0 6px 34px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(221, 103, 74, 0.58);
+}
+
+.lesson-rail__stage span {
+  color: rgba(221, 103, 74, 0.8);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .lesson-course {
   min-width: 0;
 }
@@ -895,7 +910,12 @@ h1 {
 .lesson-feature--review .lesson-title h2,
 .lesson-feature--lesson2 .lesson-title h2,
 .lesson-feature--lesson3 .lesson-title h2,
-.lesson-feature--lesson4 .lesson-title h2 {
+.lesson-feature--lesson4 .lesson-title h2,
+.lesson-feature--lesson5 .lesson-title h2,
+.lesson-feature--lesson6 .lesson-title h2,
+.lesson-feature--lesson7 .lesson-title h2,
+.lesson-feature--lesson8 .lesson-title h2,
+.lesson-feature--lesson9 .lesson-title h2 {
   font-size: 46px;
   line-height: 0.98;
 }
@@ -1032,6 +1052,28 @@ h1 {
   background: transparent;
 }
 
+.lesson-reflection {
+  border-left-color: var(--signal-bright);
+  background:
+    linear-gradient(110deg, rgba(185, 74, 50, 0.1), transparent 58%),
+    rgba(8, 8, 7, 0.76);
+}
+
+.lesson-reflection span {
+  color: var(--signal-bright);
+}
+
+.lesson-feature--lesson5 > .practice-grid--three,
+.lesson-feature--lesson5 > .lesson-reflection {
+  grid-column: 1 / -1;
+}
+
+.lesson-feature--lesson6 > .lesson-reflection,
+.lesson-feature--lesson8 > .lesson-reflection,
+.lesson-feature--lesson9 > .lesson-reflection {
+  grid-column: 1 / -1;
+}
+
 .lesson-record {
   padding-top: 120px;
 }
@@ -1044,12 +1086,21 @@ h1 {
   border-left: 1px solid var(--line);
 }
 
+.training-gallery--six {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.training-gallery--ten {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .training-gallery figure,
 .training-gallery figure:nth-child(1),
 .training-gallery figure:nth-child(2),
 .training-gallery figure:nth-child(3),
 .training-gallery figure:nth-child(4),
 .training-gallery--five figure:nth-child(5),
+.training-gallery--ten figure:nth-child(10),
 .training-gallery .training-note,
 .training-gallery--five .training-note {
   height: auto;
@@ -1068,13 +1119,13 @@ h1 {
     rgba(10, 9, 8, 0.68);
 }
 
-.training-gallery .training-note:nth-child(5) {
+.training-gallery .training-note:nth-child(9) {
   background:
     linear-gradient(150deg, rgba(185, 74, 50, 0.12), transparent 44%),
     rgba(10, 9, 8, 0.76);
 }
 
-.training-gallery .training-note:nth-child(5)::before {
+.training-gallery .training-note:nth-child(9)::before {
   border-color: rgba(221, 103, 74, 0.24);
 }
 
@@ -1174,6 +1225,13 @@ h1 {
 
   .lesson-rail li {
     flex: 0 0 auto;
+  }
+
+  .lesson-rail__stage {
+    align-self: center;
+    margin: 0 2px;
+    padding: 0 8px;
+    border-left: 1px solid rgba(221, 103, 74, 0.58);
   }
 
   .lesson-rail button {
@@ -1546,7 +1604,12 @@ h1 {
   .lesson-feature--review .lesson-title h2,
   .lesson-feature--lesson2 .lesson-title h2,
   .lesson-feature--lesson3 .lesson-title h2,
-  .lesson-feature--lesson4 .lesson-title h2 {
+  .lesson-feature--lesson4 .lesson-title h2,
+  .lesson-feature--lesson5 .lesson-title h2,
+  .lesson-feature--lesson6 .lesson-title h2,
+  .lesson-feature--lesson7 .lesson-title h2,
+  .lesson-feature--lesson8 .lesson-title h2,
+  .lesson-feature--lesson9 .lesson-title h2 {
     font-size: 38px;
   }
 
@@ -1573,7 +1636,9 @@ h1 {
   }
 
   .training-gallery,
-  .training-gallery--five {
+  .training-gallery--five,
+  .training-gallery--six,
+  .training-gallery--ten {
     display: flex;
     gap: 0;
     overflow-x: auto;
@@ -1591,6 +1656,8 @@ h1 {
   .training-gallery figure:nth-child(3),
   .training-gallery figure:nth-child(4),
   .training-gallery--five figure:nth-child(5),
+  .training-gallery--six figure:nth-child(6),
+  .training-gallery--ten figure:nth-child(10),
   .training-gallery .training-note,
   .training-gallery--five .training-note {
     min-width: 76vw;
