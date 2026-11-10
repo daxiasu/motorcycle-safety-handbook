@@ -1022,7 +1022,10 @@ body:not([data-active-page="rules"]) .hero-system {
 .lesson-feature--lesson6 .lesson-title h2,
 .lesson-feature--lesson7 .lesson-title h2,
 .lesson-feature--lesson8 .lesson-title h2,
-.lesson-feature--lesson9 .lesson-title h2 {
+.lesson-feature--lesson9 .lesson-title h2,
+.lesson-feature--lesson10 .lesson-title h2,
+.lesson-feature--lesson11 .lesson-title h2,
+.lesson-feature--lesson12 .lesson-title h2 {
   font-size: clamp(32px, 4.4vw, 58px);
 }
 
@@ -1196,7 +1199,7 @@ body:not([data-active-page="rules"]) .hero-system {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.training-gallery--ten {
+.training-gallery--thirteen {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1595,7 +1598,7 @@ body:not([data-active-page="rules"]) .hero-system {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .training-gallery--ten {
+  .training-gallery--thirteen {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1795,7 +1798,7 @@ body:not([data-active-page="rules"]) .hero-system {
   .practice-grid--five,
   .training-gallery,
   .training-gallery--five,
-  .training-gallery--ten,
+  .training-gallery--thirteen,
   .lesson-slots,
   .coach-credentials {
     grid-template-columns: 1fr;
