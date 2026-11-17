@@ -672,7 +672,7 @@ h1 {
 }
 
 .lesson-hero__copy::before {
-  content: "12 / 12";
+  content: "13 / 13";
   display: block;
   margin-bottom: 42px;
   color: rgba(221, 103, 74, 0.78);
@@ -925,7 +925,8 @@ h1 {
 .lesson-feature--lesson9 .lesson-title h2,
 .lesson-feature--lesson10 .lesson-title h2,
 .lesson-feature--lesson11 .lesson-title h2,
-.lesson-feature--lesson12 .lesson-title h2 {
+.lesson-feature--lesson12 .lesson-title h2,
+.lesson-feature--lesson13 .lesson-title h2 {
   font-size: 46px;
   line-height: 0.98;
 }
@@ -1086,7 +1087,8 @@ h1 {
 .lesson-feature--lesson8 > .lesson-reflection,
 .lesson-feature--lesson9 > .lesson-reflection,
 .lesson-feature--lesson10 > .lesson-reflection,
-.lesson-feature--lesson12 > .lesson-reflection {
+.lesson-feature--lesson12 > .lesson-reflection,
+.lesson-feature--lesson13 > .lesson-reflection {
   grid-column: 1 / -1;
 }
 
@@ -1106,7 +1108,7 @@ h1 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.training-gallery--thirteen {
+.training-gallery--fourteen {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1116,7 +1118,7 @@ h1 {
 .training-gallery figure:nth-child(3),
 .training-gallery figure:nth-child(4),
 .training-gallery--five figure:nth-child(5),
-.training-gallery--thirteen figure:nth-child(13),
+.training-gallery--fourteen figure:nth-child(14),
 .training-gallery .training-note,
 .training-gallery--five .training-note {
   height: auto;
@@ -1135,13 +1137,13 @@ h1 {
     rgba(10, 9, 8, 0.68);
 }
 
-.training-gallery .training-note:nth-child(13) {
+.training-gallery .training-note:nth-child(14) {
   background:
     linear-gradient(150deg, rgba(185, 74, 50, 0.12), transparent 44%),
     rgba(10, 9, 8, 0.76);
 }
 
-.training-gallery .training-note:nth-child(13)::before {
+.training-gallery .training-note:nth-child(14)::before {
   border-color: rgba(221, 103, 74, 0.24);
 }
 
@@ -1630,7 +1632,8 @@ h1 {
   .lesson-feature--lesson9 .lesson-title h2,
   .lesson-feature--lesson10 .lesson-title h2,
   .lesson-feature--lesson11 .lesson-title h2,
-  .lesson-feature--lesson12 .lesson-title h2 {
+  .lesson-feature--lesson12 .lesson-title h2,
+  .lesson-feature--lesson13 .lesson-title h2 {
     font-size: 38px;
   }
 
@@ -1659,7 +1662,7 @@ h1 {
   .training-gallery,
   .training-gallery--five,
   .training-gallery--six,
-  .training-gallery--thirteen {
+  .training-gallery--fourteen {
     display: flex;
     gap: 0;
     overflow-x: auto;
@@ -1678,7 +1681,7 @@ h1 {
   .training-gallery figure:nth-child(4),
   .training-gallery--five figure:nth-child(5),
   .training-gallery--six figure:nth-child(6),
-  .training-gallery--thirteen figure:nth-child(13),
+  .training-gallery--fourteen figure:nth-child(14),
   .training-gallery .training-note,
   .training-gallery--five .training-note {
     min-width: 76vw;
